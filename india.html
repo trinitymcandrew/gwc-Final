@@ -29,11 +29,26 @@ p {
     text-align: right;
  }
  
-.mySlides {display:none}
- 
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
- 
-.w3-badge {height 10px;width:10px;padding:0}  
+ div.gallery {
+	margin: 75px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 180px;
+}
+
+div.gallery:hover {
+	border: 1px solid #777;
+}
+
+div.gallery img {
+	width: 100%;
+	height: auto;
+}
+
+div.desc {
+	padding: 25px;
+	text-align: center;
+}
 </style>
 
 </head>
@@ -43,47 +58,58 @@ p {
 <ul>
 
   <li><a class="active" href="future.html">Future</a></li>
-  <li><a class="active"href="#Mission">Mission</a></li>
   <li><a class="active"href="aboutus.html">About</a></li>
   <li><a class="active" href="india.html">Home</a></li>
    <p style="font-size: 25px " float= "left"  class="name" href="#name">Name</p>
 </ul>
-
 </head>
-
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-	showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-	var i;
-	var x = document.getElementsByClassName("mySlides");
-	if (n > x.length) {slideIndex = 1}
-	if (n < 1) {slideIndex = x.length}
-	for (i = 0; i < x.length; i++) {
-		x[i].style.display = "none";
-	}
-	x[slideIndex-1].style.display = "block";
-}
-</script>
-<div>
-<img class="mySlides" src="mumbai.jpg" style="width:1400px;height:505px">
-<img class="mySlides" src="ind.jpg" style="width:1400px;height:505px">
-<img class="mySlides" src="school.jpg" style="width:1400px;height:505px">
-<img class="mySlides" src="Elementary_School.jpg" style="width:1400px;height:505px">
-
-		<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;
-	</button>
-		<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;
-	</button>
+<div class="gallery">
+  <a target="_blank" href="mumbai.jpg">
+    <img src="mumbai.jpg" width="300" height="200">
+  </a>
+  
+  <div class="desc">In 2011, India had 1.39 million children who were not in primary or secondary school.</div>
 </div>
-	
 
-
+<div class="gallery">
+   <a target="_blank" href="ind.jpg"> 
+     <img src="ind.jpg" width="800" height="800">
+   </a>
+   <div class="desc">In 2006, 62.75% of people 15 years+ could read & write a statement on their everyday life.</div>
+   </div>
+   
+<div class="gallery">
+	<a target="_blank" href="school.jpg">
+	 <img src="school.jpg" width="300" height="200">
+	</a>
+	<div class="desc"> 2013-2014, the pupil-teacher ratio was only 28:1; it used to be 46:1.</div>
+</div>
+<div class="gallery">
+	<a target="_blank" href="Elementary_School.jpg">
+	 <img src="Elementary_School.jpg" width="300" height="200">
+	</a>
+	<div class="desc"> In 2014, only 1 in 4 students could read an English setence. (32%)</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <p class="sansserif"; style="font-size:32px;color:#FF8C00;"><b>Our Mission</b></p>
 <p class="sansserif"; style="font-size:16px;color:	#228B22;"><b>Our mission is to promote and bring awareness of the schooling system in India. Education is a vital part of a child's life and success yet millions of kids in India receive little to no school, thus cuasing the illteracy rate of India to rise. The Indian Express complied data amongest 2 million children,conlcuding that over 70% of Delhi government school students cannot read or do simple calculations. Therefore, we want to bring this issue to light to allow children in India to reach their fullest potential and get the education they deserve.   </b></p>
 <br>
