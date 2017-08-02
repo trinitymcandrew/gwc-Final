@@ -3,61 +3,69 @@
 
 <style>
 ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 5;
-	overflow: hidden;
-	background-color: #FF8C00;
+    list-style-type: none;
+    margin: 0;
+    padding: 5;
+    overflow: hidden;
+    background-color: #FF8C00;
 }
  li {
-	float: right;
+    float: right;
 }
  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
  li a:hover {
-    background-color: #FFA500;
+	background-color: #FFA500;
 }
 p {
-	color: white;
-	}
+    color: white;
+    }
 .center {
-    text-align: right;
+	text-align: right;
  }
  
  div.gallery {
-	margin: 75px;
-	border: 1px solid #ccc;
-	float: left;
-	width: 180px;
+    margin: 75px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
 }
-
 div.gallery:hover {
-	border: 1px solid #777;
+    border: 1px solid #777;
 }
-
 div.gallery img {
-	width: 100%;
-	height: auto;
+    width: 100%;
+    height: auto;
+}
+div.desc {
+    padding: 25px;
+    text-align: center;
 }
 
-div.desc {
-	padding: 25px;
-	text-align: center;
+.left {
+    text-align: left;
 }
+
 </style>
 
 </head>
 <body>
 
+<script>
+function myFunc(){
+	document.getElementById("email").innerHTML = 'mcandrewtrinity@gmail.com, aanikapatel17@gmail.com, or pateljenna2001@gmail.com';
+}
+</script>
 
 <ul>
 
   <li><a class="active" href="future.html">Future</a></li>
+  <li><a class="active" href="info.html">Info</a></li>
   <li><a class="active"href="aboutus.html">About</a></li>
   <li><a class="active" href="india.html">Home</a></li>
    <p style="font-size: 25px " float= "left"  class="name" href="#name">Name</p>
@@ -65,31 +73,33 @@ div.desc {
 </head>
 <div class="gallery">
   <a target="_blank" href="mumbai.jpg">
-    <img src="mumbai.jpg" width="300" height="200">
+	<img src="mumbai.jpg" width="300" height="200">
   </a>
-  
+ 
   <div class="desc">In 2011, India had 1.39 million children who were not in primary or secondary school.</div>
 </div>
 
 <div class="gallery">
-   <a target="_blank" href="ind.jpg"> 
-     <img src="ind.jpg" width="800" height="800">
+   <a target="_blank" href="ind.jpg">
+ 	<img src="ind.jpg" width="800" height="800">
    </a>
    <div class="desc">In 2006, 62.75% of people 15 years+ could read & write a statement on their everyday life.</div>
    </div>
    
 <div class="gallery">
-	<a target="_blank" href="school.jpg">
-	 <img src="school.jpg" width="300" height="200">
-	</a>
-	<div class="desc"> 2013-2014, the pupil-teacher ratio was only 28:1; it used to be 46:1.</div>
+    <a target="_blank" href="school.jpg">
+     <img src="school.jpg" width="300" height="200">
+    </a>
+    <div class="desc"> 2013-2014, the pupil-teacher ratio was only 28:1; it used to be 46:1.</div>
 </div>
 <div class="gallery">
-	<a target="_blank" href="Elementary_School.jpg">
-	 <img src="Elementary_School.jpg" width="300" height="200">
-	</a>
-	<div class="desc"> In 2014, only 1 in 4 students could read an English setence. (32%)</div>
+    <a target="_blank" href="Elementary_School.jpg">
+     <img src="Elementary_School.jpg" width="300" height="200">
+    </a>
+    <div class="desc"> In 2014, only 1 in 4 students could read an English setence. (32%)</div>
 </div>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -111,19 +121,43 @@ div.desc {
 <br>
 <br>
 <p class="sansserif"; style="font-size:32px;color:#FF8C00;"><b>Our Mission</b></p>
-<p class="sansserif"; style="font-size:16px;color:	#228B22;"><b>Our mission is to promote and bring awareness of the schooling system in India. Education is a vital part of a child's life and success yet millions of kids in India receive little to no school, thus cuasing the illteracy rate of India to rise. The Indian Express complied data amongest 2 million children,conlcuding that over 70% of Delhi government school students cannot read or do simple calculations. Therefore, we want to bring this issue to light to allow children in India to reach their fullest potential and get the education they deserve.   </b></p>
+<p class="sansserif"; style="font-size:16px;color:    #228B22;"><b>Our mission is to promote and bring awareness of the schooling system in India. Education is a vital part of a child's life and success yet millions of kids in India receive little to no school, thus causing the illiteracy rate of India to rise. The Indian Express compiled data amongst 2 million children,concluding that over 70% of Delhi government school students cannot read or do simple calculations. Therefore, we want to bring this issue to light to allow children in India to reach their fullest potential and get the education they deserve.   </b></p>
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-<div  style="background-color:#228B22;color:white;padding:90px;">
-  <p id="demo"> </p>
+
+
+<div style="background-color:#228B22;color:white;padding:70px;">
+
+<a href="https://www.facebook.com/">
+<img src="fb.jpg" class="left" width="50">
+</a>
+<a href="https://www.snapchat.com/">
+<img src="snap.jpg" class="left" width="50">
+</a>
+<a href="https://twitter.com/?lang=en">
+<img src="twit.jpg" class="left" width="50">
+</a>
+<a href="https://www.instagram.com/accounts/login/">
+<img src="insta.jpg" class="left" width="50">
+</a>
+
+<p style="margin-left:1200px;margin-right:1200px">
+
+<p id="email" style="text-align:right"</p>
+
+
+
+<br>
+
+<button type="button" onclick="myFunc()">Contact Us!</button></p>
+
+  <p class="center"> | Trinity McAndrew, Aanika Patel, and Jenna Patel</p>
   
-<p style="margin-left:500px;margin-right:500px">
-<button type="button" onclick=" document.getElementById('demo').innerHTML = 'aanikapatel17@gmail.com or pateljenna2001@gmail.com' ">Contact Us!</button>
-  <p class="center"> -Aanika and Jenna Patel</p>
 </div> 
+
 </body>
 </html>
