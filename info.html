@@ -166,7 +166,7 @@ function myFunc(){
 <br>
 <div class="container">
   <form action="/action_page.php">
-    <label for="fname">First Name</label>
+    <label for="fname">First Name*</label>
 	<br>
     <input type="text" id="fname" name="firstname" placeholder="First Name">
 	<br>
@@ -176,21 +176,18 @@ function myFunc(){
     <input type="text" id="lname" name="lastname" placeholder="Last Name">
 	<br>
 
-    <label for="country">Country</label>
+    <label for="emal">Email*</label>
 	<br>
-    <select id="country" name="country">
-      <option value="usa">USA</option>
-      <option value="india">India</option>
-      <option value="other">Other</option>
-    </select>
+    <input type="text" id="email" name="mail" placeholder="Mail">
 	<br>
 	<br>
-	<label for="comment">Comment</label>
+	<label for="comment">Comment*</label>
 	<br>
    
     <textarea id="comment" name="comment" placeholder="Comment Here" style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
+	<p>* are required fields.</p>
   </form>
 </div>
 <div style="background-color:#228B22;color:white;padding:70px;">
