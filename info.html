@@ -2,7 +2,6 @@
 <head>
 
 <style>
-
 input[type=text], select, textarea {
     width: 30%;
     padding: 8px;
@@ -11,9 +10,7 @@ input[type=text], select, textarea {
     box-sizing: border-box;
     margin-top: 2px;
     margin-bottom: 2px;
-
 }
-
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -22,17 +19,14 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-
 input[type=submit]:hover {
     background-color: #45a049;
 }
-
 .container {
     border-radius: 0px;
     background-color:white;
     padding: 10px;
 }
-
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -92,6 +86,186 @@ img.dice2 {
 p {
     text-indent: 50px;
 }
+
+textarea{
+  resize: none;
+  outline: none;
+  width: 394px;
+  font-family: tahoma;
+  background: #f9f9f9;
+}
+
+textarea:focus{
+  background: #fff;
+}
+
+input[type="submit"]{
+  width: 400px;
+  padding: 5px 0px;
+  font-weight: bold;
+  margin-top: -6px;
+}
+
+.content{
+  width: 100%;
+}
+
+.comments{
+  width: 400px;
+  margin: 30px auto;
+}
+
+.insert-text{
+  position: relative;
+}
+
+.insert-text .loading{
+  position: absolute;
+  bottom: -25px;
+  display: none;
+}
+
+.insert-text .total-comment{
+  position: absolute;
+  bottom: -25px;
+  right: 0px;
+}
+
+.insert-text .total-comment:before{
+  content: "Total comment: ";
+  font-weight: bold;
+}
+
+.list-comments{
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+}
+
+.list-comments > div{
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.list-comments > div:last-child{
+  border-bottom: none;
+}
+
+.editor{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.editor-header{
+  border-bottom: 1px solid #ccc;
+}
+
+.editor-header a{
+  display: inline-block;
+  padding: 10px;
+  color: #666;
+}
+
+.editor-header a:hover{
+  color: #000;
+}
+
+.editor-content{
+  padding: 10px;
+  outline: none;
+  min-height: 80px;
+  background: #f9f9f9;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.editor-content:focus{
+  background: #fff;
+}
+
+b{
+  font-weight: bold;
+}
+
+i{
+  font-style: italic;
+}
+
+p{
+  line-height: 20px;
+}
+
+a{
+  text-decoration: none;
+}
+
+[data-role="bold"]{
+  font-weight: bold;
+}
+
+[data-role="italic"]{
+  font-style: italic;
+}
+
+[data-role="underline"]{
+  text-decoration: underline;
+}
+
+[class^="menu"] {
+  position: relative;
+  top: 6px;
+  display: block;
+  width: 27px;
+  height: 2px;
+  margin: 0 auto;
+  background: #999;
+}
+
+[class^="menu"]:before {
+  content: '';
+  top: -5px;
+  width: 80%;
+  position: relative;
+  display: block;
+  height: 2px;
+  margin: 0 auto;
+  background: #999;
+}
+
+[class^="menu"]:after {
+  content: '';
+  top: 3px;
+  width: 80%;
+  position: relative;
+  display: block;
+  height: 2px;
+  margin: 0 auto;
+  background: #999;
+}
+
+.menu-left {
+  margin-right: 5px;
+}
+
+.menu-left:before{
+  margin-right: 5px;
+}
+
+.menu-left:after{
+  margin-right: 5px;
+}
+
+.menu-right {
+  margin-left: 5px;
+}
+
+.menu-right:before{
+  margin-left: 5px;
+}
+
+.menu-right:after{
+  margin-left: 5px;
+}
+
 </style>
 
 </head>
@@ -103,6 +277,55 @@ p {
 function myFunc(){
 	document.getElementById("email").innerHTML = 'mcandrewtrinity@gmail.com, aanikapatel17@gmail.com, or pateljenna2001@gmail.com';
 }
+
+$(document).ready(function(){
+  $(".editor-header a").click(function(e){
+    e.preventDefault();
+
+    var _val = $(this).data("role"),
+        _sizeValIn = parseInt($(this).data("size-val") + 1),
+        _sizeValRe = parseInt($(this).data("size-val") - 1),
+        _size = $(this).data("size");
+    if(_size == "in-size"){
+      document.execCommand(_val, false, _sizeValIn + "px");
+    } else{
+      document.execCommand(_val, false, _sizeValRe + "px");
+    }
+  });
+});
+
+$(document).ready(function(){
+  var $text = $("#text"),
+      $submit = $("input[type='submit']"),
+      $listComment = $(".list-comments"),
+      $loading = $(".loading"),
+      _data,
+      $totalCom = $(".total-comment");
+
+  $totalCom.text($(".list-comments > div").length);
+
+  $($submit).click(function(){
+    if($text.html() == ""){
+      alert("Please write a comment!");
+      $text.focus();
+    } else{
+      _data = $text.html();
+      $.ajax({
+        type: "POST",
+        url: window.local,
+        data: _data,
+        cache: false,
+        success: function(html){
+          $loading.show().fadeOut(300);
+          $listComment.append("<div>"+_data+"</div>");
+          $text.html("");
+          $totalCom.text($(".list-comments > div").length);
+        }
+      });
+      return false;
+    }
+  });
+});
 
 </script>
 
@@ -165,29 +388,17 @@ function myFunc(){
 <br>
 <br>
 <div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name*</label>
-	<br>
-    <input type="text" id="fname" name="firstname" placeholder="First Name">
-	<br>
-
-    <label for="lname">Last Name</label>
-	<br>
-    <input type="text" id="lname" name="lastname" placeholder="Last Name">
-	<br>
-
-    <label for="emal">Email*</label>
-	<br>
-    <input type="text" id="emal" name="mail" placeholder="Mail">
-	<br>
-	<br>
-	<label for="comment">Comment*</label>
-	<br>
+	<h3>Send us some comments!</h3>
+  <form action="mailto:aanikapatel17@gmail.com" method="post" enctype="text/plain">
+   Name:<br>
+   <input type="text" name="name"><br>
+   Your Email:<br>
+   <input type="text" name="mal"><br>
+   Comment:<br>
+   <input type="text" name="comment" size="50"><br><br>
+   <input type="submit" value="Send">
+   <input type="reset" value="Reset">
    
-    <textarea id="comment" name="comment" placeholder="Comment Here" style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-	<p>* are required fields.</p>
   </form>
 </div>
 <div style="background-color:#228B22;color:white;padding:70px;">
